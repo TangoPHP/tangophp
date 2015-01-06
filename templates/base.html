@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Resumen del contenido de la página">
+		<title>{% block titulo %}{% endblock %}</title>
+		<link rel="stylesheet" href="css/css.css" type="text/css" media="all"/>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/js.js"></script>
+		
+	</head>
+	<body>
+		
+		<header>
+			<div class="tango_logo"></div>
+			<nav id="menu" class="sombra">
+				<div id="nav_contenido">
+					<a>&nbsp;</a>
+					<a href="index.php">Inicio</a><a>|</a>
+					<a href="nosotros.php">Nosotros</a><a>|</a>
+					<a href="tango_doc.php">Documentación Tango</a><a>|</a>
+					<a href="descargas.php">Descargas</a>
+				</div>
+			</nav>
+		</header>
+		<section>
+			<article>
+				{%block contenido%}
+				{%endblock%}
+			</article>
+			<aside>
+				<h3>Titulo de contenido</h3>
+				<p>contenido</p>
+			</aside>
+		</section>
+		
+		<footer class="sombra">
+			<div class="footer_contenido">
+				<div class="footer_panel">
+					<img class="logo_solo" src="img/logo_solo.png">
+					<div class="item_creditos_iz">&copy;TangoPHP &reg;Simple Framework</div>
+					
+					
+				</div>
+				<div class="separador_items"></div>
+				<div class="footer_panel">
+					<br>
+					<div class="item_creditos">Diseño y Programación : Gastón Mura</div>
+					<div class="item_creditos">Email : gastonmura@hotmail.com</div>
+					<div class="item_creditos">Trelew - Chubut - Argentina {{anio}}</div>
+				</div>
+			</div>
+		</footer>
+	<script>
+	$(document).ready(function() {
+		
+		var menu = $('#menu');
+		var menu_offset = menu.offset();
+
+		$(window).on('scroll', function() {
+			if($(window).scrollTop() > menu_offset.top) {
+			
+				$("#menu").removeClass("menu_static");
+				$("#menu").addClass("menu_fixed");
+
+			} else {
+			
+				$("#menu").removeClass("menu_fixed");
+				$("#menu").addClass("menu_static");
+
+			}
+		});
+	});
+	</script>
+	</body>
+</html>

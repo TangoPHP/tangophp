@@ -1,0 +1,14 @@
+<?php
+include_once('Areas.php');
+include_once('Barrios.php');
+include_once('Categorias.php');
+include_once('Denuncias.php');
+include_once('Derivaciones.php');
+include_once('Estado_denuncia.php');
+include_once('Estados.php');
+include_once('Prioridades.php');
+include_once('Procedencia.php');
+include_once('Rel_usuario_ip.php');
+include_once('Subareas.php');
+include_once('Usuarios.php');
+?>

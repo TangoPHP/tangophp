@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block titulo %}TangoPHP - Simple Framework{% endblock %}
+
+
+{% block contenido %}
+
+{%if hay_paginas%}
+{{hay_paginas}}
+{%endif%}
+<p> 
+	{%for d in denuncia%}
+	<hr>
+	    [ {{d.i}} ]<br>
+		ID#      {{d.iddenuncia}}<br>
+		Fecha    {{d.fecha_hora}}<br>
+		Proc     {{d.idprocedencia.descripcion}}<br>
+		Cat      {{d.idcategoria.descripcion}}<br>
+		Tel      {{d.telefono}}<br>
+		Dir      {{d.direccion}}<br>
+		Barrio   {{d.idbarrio.descripcion}}<br>
+		
+		Usr      {{d.idusuario.idusuario}}<br>
+		Nombre   {{d.idusuario.nombre}}<br>
+		Mail     {{d.idusuario.mail}}<br>
+		Clave    {{d.idusuario.clave}}<br>
+		
+
+		Prior    {{d.idprioridad.descripcion}}<br>	
+		Dni      {{d.dni}}<br>
+		Mail     {{d.mail}}<br>
+		Sexo     {{d.sexo}}<br>
+		UltEst   {{d.idultimoestado.descripcion}}<br>
+		
+		<hr>
+		<< <a href="#">{{gaston}}</a> >>
+		<img width="150" src="data:image/png;base64,{{d.foto}}"><br>
+	<hr>
+	{%endfor%}
+
+ </p>
+
+{% endblock %}
+
+
+		

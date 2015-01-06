@@ -1,0 +1,31 @@
+<div class="contenedor_paginas">
+
+	<div class="contenedor_items">
+		<div class="contenedor_resultados">
+		<div class="resultados_texto">Página {{numero_pagina}} de alrededor {{resultados}} resultados.</div>
+	</div>
+	
+	<a href="{{link_primero}}"><div class="primero" title="Ir a la primera página."></div></a>
+	
+		<div class="contenedor_anterior">				
+		<a href="{{link_anterior}}"><div class="anterior_down" title="Ir a la página anterior."></div></a>
+	    </div>
+	
+	{% for p in links %}
+		<div class="item">
+		<a class="{{p.paginaactiva}}" href="{{p.paginalink}}">
+		
+		<div class="item_down"> {{p.paginanumero}} </div>
+		</a>
+	</div>
+	{%endfor%}
+	
+		<div class="contenedor_siguiente">
+		
+		<a href="{{link_siguiente}}" ><div class="siguiente_down" title="Ir a la siguente página."></div></a>
+	</div>
+	
+	<a href="{{link_ultimo}}"><div class="ultimo" title="Ir a la ultima página."></div></a>
+	
+	</div>
+</div>
